@@ -9,3 +9,5 @@ the chosen picture is featured at the top of the page. Then you can write the co
 If you already wrote your name in the input field in the front page, it will be shown in the Create Card page automatically.
 
 ![create card](https://student.labranet.jamk.fi/~p0033/harkka/esittelypics/cc.png)
+
+The pictures and the cards are displayed using the Masonry gallery.
