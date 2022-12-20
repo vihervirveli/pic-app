@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maarit Salo P0033 - Web-ohjelmointikurssin harjoitustyön esittelysivu</title>
+    <style>
+        body {
+            background-color: #42a5f5;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .contentp {
+            padding: 10px;
+            background-color: white;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+        }
+
+        img {
+            display: block;
+            padding: 10px;
+            width: 95%;
+        }
+
+        .content {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Maarit Salo P0033 - Web-ohjelmointikurssin harjoitustyön esittelysivu</h1>
+
+        <div class="contentp">
+            <h2>Harjoitustyön nimi: pic-app</h2>
+            <a href="https://student.labranet.jamk.fi/~p0033/harkka/">Linkki harjoitustyön buildiin</a>
+        </div>
+        <div class="contentp">Tekijä: Maarit Salo P0033</div>
+        <div class="contentp">Päivämäärä 7.7.- 28.7.</div>
+        <div class="contentp">
+            <h3>Tehtävän kuvaus</h3>
+            <p>Sovelluksessa haetaan kuvia dynaamisesti Pixabayn kuvapankista API-keyn avulla ja luodaan virtuaalisia
+                postikortteja. Sovelluksessa on useita sivuja, joiden välillä seikkaillaan react-routerin avulla.
+                Käyttäjälle näkyy jokaisen sivun ylälaidassa navigaatio, eli linkit noille kolmelle sivulle.
+            </p>
+            <p>Etusivulla käyttäjä voi kirjoittaa oman nimensä, ja se muistetaan esimerkiksi sovelluksen
+                sivulla CreateCard. <img src="esittelypics/fp.png" alt="front page" /></p>
+
+
+            <p>Sivulla CreateCard käyttäjälle näytetään lomake, johon hänen nimensä on jo kirjoitettu jos käyttäjä antoi
+                sen etusivulla. Lomakkeesen käyttäjä voi kirjoittaa tekstiä kortin sisällöksi.
+                <img src="esittelypics/cc.png" alt="create card" />
+            </p>
+            <p>
+                Käyttäjä voi myös
+                kirjoittaa kuvahakuun hakusanoja, ja klikkaamalla valita niistä yhden korttiin laitettavaksi. Kun kuvaa
+                on klikatttu, valittu kortti näytetään sivun ylälaidassa merkiksi siitä, että se on valittu. Kuvat
+                näytetään Masonry-gallerialla esteettisesti.
+                <img src="esittelypics/masonry.png" alt="masonry" />
+            </p>
+            <p>Kun käyttäjä on tyytyväinen, hän voi lähettää kortin, jolloin CreateCardissa näytetään vaihtoehtoinen
+                komponentti CardCreated, jossa näytetään luodun kortin tiedot.
+                <img src="esittelypics/cardcreated.png" alt="card created" />
+            </p>
+            <p> Sivulla AllCards käyttäjä voi tarkastella kaikkia luotuja kortteja. Kolme korttia on lisätty jo
+                valmiiksi.
+                <img src="esittelypics/allcards.png" alt="all cards" />
+            </p>
+        </div>
+        <div class="contentp">
+            <h3>Videoesittely</h3>
+            <a href="https://jamkstudent-my.sharepoint.com/:v:/g/personal/p0033_student_jamk_fi/ET3xhDy_Z5xHt7nfVQSZxqMBm3MqD3X1XS_TfKgK1Bllgw?e=nK4cdv">Videoesittelyn linkki</a></div>
+        <div class="contentp">
+            <h3>Sovelluksen kokonaisrakenne</h3>
+            <img src="https://student.labranet.jamk.fi/~p0033/harkka/esittelypics/components.png" alt="komponentit" />
+        </div>
+        <div class="contentp">
+            <h3>Funktiot ja luokat</h3>
+            <p>En käyttänyt luokkia vaan Hookeja Reactissa.</p>
+            <p>App.js sisältää BrowserRouter navigaation ja linkit joka sivulla. App.js näkyy kaikilla sivuilla
+                kehikkona. App.js sisältää myös addCard-funktion, jota kutsutaan kun käyttäjä haluaa lisätä kortin. Se
+                asettaa staten allCards. App.js on myös handleNimiInputChange-funktio, joka hoitaa käyttäjän nimen
+                asetukseen stateen. Lopuksi on vielä useEffect, joka asettaa allCards-stateen kolme valmista korttia jos
+                allCards-state on tyhjä.</p>
+            <p>Frontpage-komponentti sisältää vain linkit kortin luomissivulle kuin kaikkiin kortteihin.</p>
+            <p>CreateCard-komponentissa on input-kentät niin käyttäjälle kuin tekstille ja käyttäjä voi vielä valita
+                Masonry-galleriasta kuvan korttiin klikkaamalla. Komponentti sisältää bringPics-funktion, jolla
+                Pixabaysta tuodaan käyttäjän etsimät kuvat stateen pics, josta ne Masonry-galleriaan laitetaan
+                mappaamalla. Komponentti sisältää handleCardTextInputChange-funktion,
+                joka hoitaa kortin sisällön asettamisen stateen cardText. Edelleen komponentti sisältää
+                handlePicSearchInputChange-funktion, joka muuttaa kuvahakukentän inputin muutoksen stateen.
+                Komponentissa on myös handleChoice-funktio, joka käyttäjän kuvaa klikatessa valitsee kuvan korttiin.
+                Kortti tulee näkyviin sivun alkuun. Komponentti sisältää myös handleSendCard-funktion, joka asettaa
+                kortin stateen card ja kutsuu App.js:n addCardia lisätäkseen kortin myös kaikkien korttien joukkoon. Kun
+                card-state on asetettu, näytetään CreateCardin lapsikomponentti CardCreated.</p>
+            <p>CardCreated näyttää juuri luodun kortin isona, näyttää kuvan, käyttäjän ja sen alle tekstirivit
+                listaelementteinä. CardCreatedissa ainoa funktio on komponentti itse. Siellä on linkki kaikkiin
+                kortteihin.</p>
+            <p>AllCards-komponentti näyttää App.js:ssä sijaitsevan allCards-staten sisällön mappaamalla sen.</p>
+            <p>Mukana on myös ErrorPage mutta se ei toimi toivotulla tavalla koska sivuilla ei vielä ole ns. oikeita
+                urleja. Se on kuitenkin listattuna kuvassa.</p>
+        </div>
+        <div class="contentp">
+            <h3>Ulkoiset tietovarastot</h3>
+            <p>Pixabay</p>
+        </div>
+        <div class="contentp">
+            <h3>Lähdekoodit</h3>
+            <a href="https://gitlab.labranet.jamk.fi/P0033/pic-app">Lähdekoodit</a>
+        </div>
+        <div class="contentp">
+            <h3>Ajan käyttö</h3>
+            <p>Opettaja on speksannut 40 t, minulta kului </p>
+        </div>
+        <div class="contentp">
+            <h3>Prosessista</h3>
+            <a href="https://gitlab.labranet.jamk.fi/P0033/pic-app/-/blob/main/README.md">Kirjoitin README-tiedostoon
+                mitä tein, aina kun tein jotain.</a>
+        </div>
+        <div class="contentp">
+            <h3>Itsearvio</h3>
+            <p>Olen todella ylpeä siitä kuinka pitkälle pääsin tässä. Sovellus hakee dynaamisesti kuvia Pixabaysta,
+                esitän kuvat Masonry-gallerialla esteettisesti, ja opin käyttämään aika pitkälle react-routeriakin.
+                Joitakin asioita haluan vielä viilata ja vaihtaa, mutta ne menevät tämän kurssin ulkopuolelle.
+                Harjoitustyön tehtävänannossa sanottiin "Harjoitustyöprosessissa opiskelija oppii, soveltaa ja osoittaa
+                opintojakson aihealueen hallintaa laajemmin ja syvemmin kuin pelkästään harjoitustehtävien avulla.
+                Parhaimmillaan tämä näkyy sellaisten ratkaisujen soveltamisessa, jotka eivät ole suoraan nähtävissä
+                opintojaksolla tarjotuista materiaaleista." Minusta olen onnistunut tuossa, koska Hookeja,
+                react-routeria, axiosta eikä montaakaan niistä muista asioista joita käytin tässä työssä löydy kurssin
+                materiaaleista. Toisaalta kuitenkin hyödynnän myös kurssin anteja, esim. input-kenttien valueita
+                muuttamalla ja klikkaamisen tapahtumienkäsittelijöissä.</p>
+        </div>
+
+        <div class="contentp">
+            <h3>Zip</h3>
+            <a href="">Linkki kaiken sisältävään zippi-pakettiin</a>
+        </div>
+    </div>
+</body>
+
+</html>

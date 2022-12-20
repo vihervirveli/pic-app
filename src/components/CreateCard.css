@@ -1,0 +1,96 @@
+.CreateCard {
+    text-align: center;
+    background-color: palevioletred;
+    color: white;
+    width: 98%;
+    min-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  .box{
+    text-align: center;
+   
+  }
+  
+  label{
+    display: block;
+    padding: 10px;
+  }
+  
+  button{
+    margin-top: 10px;
+  }
+  
+  
+  .picButton {
+  background-color: #e91e63;
+  padding: 10px 24px;
+  color: white;
+  margin-bottom: 10px;
+  display: block;
+  width: 30%;
+  }
+  
+  input[type=text]{
+    padding: 10px 24px;
+    width: 70%;
+  }
+  
+  img {
+    width:100%;
+    vertical-align: top;
+  }
+  
+  .valittu{
+    width: 30%;
+  }
+  
+  .my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    
+  }
+  .my-masonry-grid_column {
+    padding-left: 30px; /* gutter size */
+    width: 30%;
+    background-clip: padding-box;
+  }
+  
+  /* Style your items */
+  .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+    background: grey;
+    margin-bottom: 30px;
+  }
+
+  .f, .picSearch{
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+width: 30%;
+background-color: #C0C0C0;
+padding: 20px 20px;
+margin-bottom: 10px;
+  }
+
+.f img{
+  width: 90%;
+}
+
+  .picSearch{
+    height: 150px;
+  }
+
+
+
+
+
+  textarea{
+    width: 80%;
+    height: 120px;
+  }

@@ -1,0 +1,25 @@
+.cardContainer{
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    background-color: #C0C0C0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .wrapwrap{
+      margin: 10px;
+      padding: 10px;
+      background-color: palevioletred;
+  }
+
+  ul {
+      list-style: none;
+  }
+
+  .linky {
+    color: white;
+    display: block;
+  }

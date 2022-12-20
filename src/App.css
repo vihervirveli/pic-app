@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+  background-color: rgb(11, 85, 150);
+  color: white;
+  width: 98%;
+  min-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-bottom: 2px;
+}
+
+
+
+.box{
+  text-align: center;
+ 
+}
+
+label{
+  display: block;
+}
+
+button{
+  margin-top: 10px;
+}
+
+
+.picButton {
+background-color: #e91e63;
+padding: 10px 24px;
+color: white;
+margin-bottom: 10px;
+}
+
+input[type=text]{
+  padding: 10px 24px;
+}
+
+img {
+  width:100%;
+  vertical-align: top;
+}
+
+.valittu{
+  width: 30%;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  width: 30%;
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+}
+
+.LinkList li {
+  list-style: none;
+  padding: 10px;
+}
+
+.LinkList li a:link {
+color: white;
+text-decoration: none;
+}
+
+.LinkList li a:visited {
+  color: white;
+  text-decoration: none;
+  }
