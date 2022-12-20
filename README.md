@@ -10,6 +10,10 @@ see all cards or create a new one.
 
 ![Front page](https://student.labranet.jamk.fi/~p0033/harkka/esittelypics/fp.png)
 
+The pictures and the cards are displayed using the Masonry gallery.
+
+![Masonry](https://student.labranet.jamk.fi/~p0033/harkka/esittelypics/masonry.png)
+
 ## All Cards
 
 In the page All Cards, you can see all the cards made with the app. 
@@ -26,4 +30,4 @@ If you already wrote your name in the input field in the front page, it will be 
 
 ![create card](https://student.labranet.jamk.fi/~p0033/harkka/esittelypics/cc.png)
 
-The pictures and the cards are displayed using the Masonry gallery.
+
